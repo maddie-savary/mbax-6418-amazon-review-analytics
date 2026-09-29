@@ -1,0 +1,33 @@
+# --- secrets / env ---
+.env
+*.env
+.env.*
+!.env.example
+
+# --- virtualenv / python bytecode ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# --- macOS ---
+.DS_Store
+
+# --- large, re-downloadable dataset ---
+data/
+
+# --- OS / editor cruft ---
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# --- R local session files ---
+.Rhistory
+.RData
+.Rproj.user/
+
+# --- local scratch / temporary artifacts ---
+*.log

@@ -1,0 +1,4 @@
+# Runtime dependencies for MBAX 6418 Assignment 1
+# Only third-party packages actually imported by the committed Python code
+# (stdlib modules like gzip/json/pathlib/hashlib are not listed).
+openai>=1.0

@@ -1,0 +1,2895 @@
+{
+  "note": "Step 5A3 LLM vs NRC emotion comparison. Neither method is treated as ground truth. No model/API calls, no rescoring, rating never used as emotion ground truth. No API key.",
+  "method": {
+    "eligibility": "LLM valid AND nrc_primary_emotion != NO_MATCH",
+    "exact_definition": "llm_primary_emotion == nrc_primary_emotion",
+    "tie_aware_definition": "llm_primary_emotion in nrc_top_emotions",
+    "no_match_handling": "agreement null, excluded from denominator",
+    "rating_used": false
+  },
+  "metrics": {
+    "total_rows": 100,
+    "valid_llm_rows": 100,
+    "nrc_covered_rows": 85,
+    "nrc_no_match_rows": 15,
+    "eligible_comparison_rows": 85,
+    "exact_agreement": {
+      "count": 19,
+      "eligible_denominator": 85,
+      "percentage_pct": 22.35
+    },
+    "tie_aware_agreement": {
+      "count": 63,
+      "eligible_denominator": 85,
+      "percentage_pct": 74.12
+    },
+    "additional_agreements_recovered_by_tie_aware": 44,
+    "llm_emotion_distribution": {
+      "ANGER": 6,
+      "ANTICIPATION": 1,
+      "DISGUST": 2,
+      "FEAR": 0,
+      "JOY": 68,
+      "SADNESS": 0,
+      "SURPRISE": 0,
+      "TRUST": 23
+    },
+    "nrc_primary_emotion_distribution": {
+      "ANGER": 2,
+      "ANTICIPATION": 59,
+      "DISGUST": 1,
+      "FEAR": 0,
+      "JOY": 21,
+      "SADNESS": 1,
+      "SURPRISE": 0,
+      "TRUST": 1,
+      "NO_MATCH": 15
+    },
+    "cross_tabulation_8x8_llm_by_nrc": {
+      "ANGER": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 1,
+        "SURPRISE": 0,
+        "TRUST": 1
+      },
+      "ANTICIPATION": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "DISGUST": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "FEAR": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "JOY": {
+        "ANGER": 2,
+        "ANTICIPATION": 38,
+        "DISGUST": 1,
+        "FEAR": 0,
+        "JOY": 18,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "SADNESS": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "SURPRISE": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "TRUST": {
+        "ANGER": 0,
+        "ANTICIPATION": 16,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      }
+    },
+    "exact_disagreement_rows": [
+      0,
+      3,
+      4,
+      6,
+      7,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      46,
+      47,
+      51,
+      56,
+      59,
+      60,
+      61,
+      62,
+      63,
+      65,
+      70,
+      71,
+      73,
+      75,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      87,
+      88,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      99
+    ],
+    "tie_aware_disagreement_rows": [
+      4,
+      9,
+      11,
+      15,
+      16,
+      17,
+      32,
+      38,
+      46,
+      51,
+      56,
+      63,
+      65,
+      70,
+      71,
+      80,
+      83,
+      88,
+      91,
+      92,
+      93,
+      95
+    ],
+    "tie_break_sensitive_rows": [
+      0,
+      3,
+      6,
+      7,
+      12,
+      13,
+      14,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      33,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      47,
+      59,
+      60,
+      61,
+      62,
+      73,
+      75,
+      81,
+      82,
+      84,
+      85,
+      87,
+      90,
+      94,
+      99
+    ],
+    "no_match_rows": [
+      31,
+      34,
+      45,
+      49,
+      55,
+      67,
+      68,
+      69,
+      74,
+      77,
+      78,
+      79,
+      86,
+      97,
+      98
+    ],
+    "grouped_by_nrc_structure": {
+      "unique_maximum": {
+        "rows": 33,
+        "exact": {
+          "rows": 33,
+          "agreements": 17,
+          "denominator": 33,
+          "percentage_pct": 51.52
+        },
+        "tie_aware": {
+          "rows": 33,
+          "agreements": 17,
+          "denominator": 33,
+          "percentage_pct": 51.52
+        }
+      },
+      "tied_maximum": {
+        "rows": 52,
+        "exact": {
+          "rows": 52,
+          "agreements": 2,
+          "denominator": 52,
+          "percentage_pct": 3.85
+        },
+        "tie_aware": {
+          "rows": 52,
+          "agreements": 46,
+          "denominator": 52,
+          "percentage_pct": 88.46
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "row_index": 0,
+      "title": "Great gift",
+      "text": "Having Amazon money is always good.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 1,
+      "title": "amazon gift card",
+      "text": "Always the perfect gift.  I have never given one and had someone seem or act disappointed.  Just the opposite.  They are thrilled and excited to have a bit of a spree.  Always the perfect size and color!  Arrives in 1 day in most cases.  So it's never too late!  Lots of cards to chose from... thank you... birthday... wedding..baby..  and many that work for many occasions...",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 6,
+        "DISGUST": 1,
+        "FEAR": 0,
+        "JOY": 7,
+        "SADNESS": 2,
+        "SURPRISE": 4,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 9,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 2,
+      "title": "perfect gift",
+      "text": "When you have a person who is hard to shop for.. an amazon gift card is P E R F E C T.  Man or woman...  No matter what their hobby... lifestyle.. or age.  All you have to do is pick the $.  Don't forget to mention that it is a GIFT when you check out - you will have some gift card options.  I've ordered many of these over years.  They are always received with glee.  Woo hoo!  If you're looking for a great fit for me - this is just my size!  :)  Best to all!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 7,
+        "SADNESS": 0,
+        "SURPRISE": 4,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 7,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 3,
+      "title": "Nice looking",
+      "text": "The tin is a nice touch and pretty large.  It's about 4&#34; in diameter and about 1/2&#34; thick.  I added a pretty red ribbon and it is perfect.  Who doesn't love shopping on Amazon? Arrived quickly, I have Prime... but I think they ship the gift cards out SUPER fast... like over night. In case you need it for a FAST gift.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 8,
+        "DISGUST": 0,
+        "FEAR": 1,
+        "JOY": 8,
+        "SADNESS": 1,
+        "SURPRISE": 3,
+        "TRUST": 4
+      },
+      "nrc_matched_token_count": 10,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 4,
+      "title": "Not $10 Gift Cards",
+      "text": "I bought this pack of Starbucks Gift cards in 2019. Ive given them to friends and I gave 2 to my daughter.<br />My daughter used one recently and it had $6.52 on the card not $10.00. She had the cashier check the balance of the other card and it had $5.32 on it! She had forgotten that she had these gift cards, so yes, 2 years later decided to use the when she found them! Do they decline in value? And then both had random amounts on them! I'm embarrassed now to have given them as gifts! Friends receiving the gift card aren't going to tell you that weren't able to cover their order with the card you gave them!!!",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 1,
+        "JOY": 8,
+        "SADNESS": 1,
+        "SURPRISE": 5,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 11,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 5,
+      "title": "Cute!",
+      "text": "That snowman tin is adorable",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 6,
+      "title": "Easy gift",
+      "text": "Great and easy gift",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 7,
+      "title": "Great gift",
+      "text": "Super cute nice quality tin<br />Your choose amount",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 8,
+      "title": "Gifts for my two granddaughters",
+      "text": "They love it !!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 9,
+      "title": "Great for saying \u201cthank you\u201d to the mail person, farrier, yard man,etc",
+      "text": "So many people<br />Make your life better so remember them!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 10,
+      "title": "Convenient, safe, and perfect gift",
+      "text": "My grandson inlaw loves his gift cards, so it's the perfect gift for Christmas",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 6,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 11,
+      "title": "Giftcard",
+      "text": "What can you say about a gift card? Well, it was valid. It's a good gift for someone who doesn't like to cook. Arrived promptly.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 12,
+      "title": "Simple giftcard!",
+      "text": "Easy way to gift money for birthdays.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 13,
+      "title": "Great giftcard",
+      "text": "Great gift for online shoppers!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 14,
+      "title": "Easy..",
+      "text": "Reloading is easy. Shopping is easy. Amazon is easy.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 15,
+      "title": "One Star",
+      "text": "Card did not work!!!!",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 16,
+      "title": "Great Product.",
+      "text": "I bought this for a Christmas gift.The recipient really liked it.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 17,
+      "title": "No note attached to sent gift card",
+      "text": "What a pretty gift card presentation , the recipient loved it ! I have one complaint , I took the time and wrote a short note to the recipient of the gift card so she knew who and why the GC was being sent but the note wasn\u2019t attached. I\u2019ve used the option to write a note on many occasions and several times it showed up without the note . I actually had to contact her to ask if she had checked her mail knowing it had arrived .",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 8,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 9,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 18,
+      "title": "Gift card",
+      "text": "Perfect! Arrived just when stated!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 19,
+      "title": "Good",
+      "text": "Good gift card",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 20,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 21,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 22,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 23,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 24,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 25,
+      "title": "Good product",
+      "text": "Good product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 26,
+      "title": "Good product",
+      "text": "Good product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 27,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 28,
+      "title": "Good Product",
+      "text": "Good Product",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 29,
+      "title": "Good",
+      "text": "Good",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 30,
+      "title": "Gift card",
+      "text": "Perfect for Christmas",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 31,
+      "title": "So easy",
+      "text": "Easy to do",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 32,
+      "title": "Mistake",
+      "text": "Hit button by mistake n deduction from credit card on file",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "SADNESS",
+      "nrc_top_emotions": [
+        "SADNESS"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 2,
+        "SURPRISE": 0,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 33,
+      "title": "Great gift idea",
+      "text": "Always great to order from my home. Amazon rocks!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 34,
+      "title": "Secure",
+      "text": "So easy to use and recipients get to choose how to use it.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 35,
+      "title": "Birthday surprise!",
+      "text": "This was a good birthday surprise!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 2,
+        "JOY": 5,
+        "SADNESS": 0,
+        "SURPRISE": 5,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 36,
+      "title": "Birthday Gift",
+      "text": "Have given as Holiday, Birthday & Other Occasions remembrances. Always appreciated by the person receiving.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 5,
+        "SADNESS": 0,
+        "SURPRISE": 4,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 37,
+      "title": "Fun",
+      "text": "Awesome & they work",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 38,
+      "title": "Reload is super easy.",
+      "text": "Really ready to reload gift cards.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 39,
+      "title": "Convenience of giftabiliy.",
+      "text": "A great way to give a gift to family members in physical form. It was so convenient.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 40,
+      "title": "Great Gift Package",
+      "text": "Nice gift packaging for any event",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 41,
+      "title": "Grest Sandwitches !!",
+      "text": "Perfect and I even used Amazon Points - was mailed right out.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 42,
+      "title": "GOOD PIZZA !!",
+      "text": "Perfect and I even used Amazon Points - was mailed right out.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 43,
+      "title": "We like this Store and they stock Tons of different Items for all kinds of Pets",
+      "text": "Our cats love this place.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 44,
+      "title": "Money was loaded on card",
+      "text": "Was cute and the money was loaded when it arrived",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANGER",
+      "nrc_top_emotions": [
+        "ANGER",
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 2,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 45,
+      "title": "\ud83d\udc4d",
+      "text": "\ud83d\udc4d",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 46,
+      "title": "Love it!!",
+      "text": "This is an online gift card nothing to show sorry\ud83e\udd2a",
+      "llm_primary_emotion": "DISGUST",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 47,
+      "title": "Five Stars",
+      "text": "Gift cards are always a hit.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANGER",
+      "nrc_top_emotions": [
+        "ANGER",
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 48,
+      "title": "So cool you can get a free tin with the gift ...",
+      "text": "So cool you can get a free tin with the gift card and it comes in 24 hours!! Super awesome. Last year I just printed off the gift cards which looked kind of cheap even though the cards were for substantial amounts. Highly recommend.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 49,
+      "title": "Reccomend",
+      "text": "Really easy to load",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 50,
+      "title": "Little sister surprise",
+      "text": "Same gift as her big sister's, this little one can choose the exact thing she most desires and run to the door for three days in anticipation.  A combined birthday and Christmas present for one who knows her own mind.  Good choice!",
+      "llm_primary_emotion": "ANTICIPATION",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 1,
+        "JOY": 5,
+        "SADNESS": 0,
+        "SURPRISE": 5,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 51,
+      "title": "The added value was great, but no more",
+      "text": "Purchasing an Amazon gift card came with an added monetary value but no more.<br /><br />A Bronx cheer for you!",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 52,
+      "title": "Perfect gift!",
+      "text": "This is near where I work and has a drive through.  Nothing better during these times to give than a gift of good food they can pick up with minimal contact. Gift cards are the way to go these days!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 5,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 6,
+        "SADNESS": 0,
+        "SURPRISE": 4,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 53,
+      "title": "Great staff appreciation gift!",
+      "text": "What better gift during these times than one to treat yourself.  This is a great gift I gave out to my staff and even those who don't read liked the idea of being able to listen to the audiobooks as well as there being content and other media through Audible.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 4,
+        "DISGUST": 1,
+        "FEAR": 1,
+        "JOY": 6,
+        "SADNESS": 1,
+        "SURPRISE": 4,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 54,
+      "title": "Cute cute cute!",
+      "text": "I love the tin! The gift cards can be ordered on different amounts.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 55,
+      "title": "Five Stars",
+      "text": "Simple and easy.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 56,
+      "title": "As described.",
+      "text": "Being able to reload the gift card is a time saver.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 57,
+      "title": "Perfect gift for any occasion. Let them pick out what they love!",
+      "text": "I mean really, who wouldn't LOVE this?!?  Wonderful gift for any occasion.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 6,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 58,
+      "title": "12 year old daughter loved this gift!",
+      "text": "Perfect gift for your kids!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 59,
+      "title": "Easy to send to an Amazon shopper",
+      "text": "This is a simple gift to friends or family. For me it was easy to setup. Took ok only about 30 seconds. I also redeem Visa gifts by giving the gift card to myself. I like there isnt a fee. I do want Amazon to make some cooler cards with my animation when a receiver gets it.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 60,
+      "title": "Rec'd promo from Amazon when reloading gift card.",
+      "text": "Bonus, rec'd a promo from Amazon for reloading gift card.  Yeah.<br /><br />Gift card was posted to my account quickly.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 4,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 61,
+      "title": "Saves a Little Over time.",
+      "text": "Nice way to save a few bucks overtime by reloading your own gift card.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 62,
+      "title": "What a great company",
+      "text": "Who wouldn't want an Amazon gift card?  The box foretold the contents, lol.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 63,
+      "title": "A problem to use at drive thru's",
+      "text": "I only used the $50 card one time at Burger King. It was difficult to use. Must be run as credit, not as gift card. No remaining balance is given at the end of the transaction. And although it's on me, I misplaced or lost this card after only spending about $6 of it. I was hoping that the seller could provide me with the full card number so that I could at least use it online for other purchases. They failed to respond. I have the receipt from BK, but it only shows the last 4 numbers. There isn't a way of contacting happy cards customer service online that I could figure out. I wish I'd just stuck with credit cards. A lot safer.",
+      "llm_primary_emotion": "ANGER",
+      "nrc_primary_emotion": "TRUST",
+      "nrc_top_emotions": [
+        "TRUST"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 2,
+        "JOY": 2,
+        "SADNESS": 2,
+        "SURPRISE": 1,
+        "TRUST": 5
+      },
+      "nrc_matched_token_count": 10,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 64,
+      "title": "A gift card does make a great gift for a tweenager.",
+      "text": "We all know the kid who wants nothing. Or actually wants everything but nothing is good enough. YES,YES,the secret weapon. A AMAZON GIFT CARD!!  You pulled it off. You showed your love and you are the best and greatest. Happy Birthday to just because,You are the BEST!!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 6,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 7,
+        "SADNESS": 0,
+        "SURPRISE": 5,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 8,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 65,
+      "title": "Nice to have",
+      "text": "This comes in  very handy, and makes the guilt less",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "DISGUST",
+      "nrc_top_emotions": [
+        "DISGUST",
+        "SADNESS"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 1,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 1,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 66,
+      "title": "Excellent Gift",
+      "text": "Who would not like an Amazon Gift Card?  Makes everyone I give them, happy!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 67,
+      "title": "Yay so easy!",
+      "text": "So easy! No scraping!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 68,
+      "title": ":)",
+      "text": "easy to use",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 69,
+      "title": "10/10",
+      "text": "works great",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 70,
+      "title": "Perfect for a birthday \ud83c\udf82",
+      "text": "Another nice gift box from Amazon. With the world the way it is now I had to send a gift rather than going to a party. And Amazon has a good selection of gift boxes and fast shipping so my nephew was happy when he received the card in the mail.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 8,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 7,
+        "SADNESS": 0,
+        "SURPRISE": 5,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 8,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 71,
+      "title": "Perfect!",
+      "text": "Bought this for a gift and was very happy it shipped quickly and they received it just in time! Amazon is awesome! \ud83e\udd29",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 72,
+      "title": "Gift box nice!",
+      "text": "Love the gift box. So much j NB icee than just handing a gift card to the grandkids.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 73,
+      "title": "It was soooo easy",
+      "text": "It was a nice way to give a present",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 74,
+      "title": "great",
+      "text": "great buy",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 75,
+      "title": "Amazon Thinks of Everything!",
+      "text": "GREAT idea!  I was so happy to have these on hand for the Holidays!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 76,
+      "title": "Amazon lover giftee?  Buy it!",
+      "text": "So gift card for certain sum.  No service fee.  Lively metal gift box - yes..... I said metal.  What is not to love about this???!<br /><br />Well done Amazon.  Well done.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 77,
+      "title": "Timing",
+      "text": "Great timing.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 78,
+      "title": "Was easy to do",
+      "text": "Easy to use",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 79,
+      "title": "PENGUINS",
+      "text": "So so cute!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 80,
+      "title": "Believe this is the best gift to give !",
+      "text": "The recipient can choose what they want so the giver has less chance of a mistake.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 1,
+        "SURPRISE": 2,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 81,
+      "title": "convenient",
+      "text": "A great and convenient gift idea-price is right too!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 82,
+      "title": "Five Stars",
+      "text": "The gift card came in a pretty box.<br />Thanks Amozan.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 83,
+      "title": "Best gift for someone you don\u2019t know what to get",
+      "text": "This was for a gift",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 3,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 84,
+      "title": "Great value",
+      "text": "Made my shopping much better good value",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 85,
+      "title": "Sweet gift!",
+      "text": "I sent this to my brother and he couldn't stop talking about it. This boxes puts a little more nice into a gift. Very pretty!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 86,
+      "title": "Amazing",
+      "text": "It can be used for a variety of things.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 87,
+      "title": "Great Holder",
+      "text": "Great holder for gift cards",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "SURPRISE"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 1,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 1,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 1,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 88,
+      "title": "Gift card",
+      "text": "Makes these so easy for any holiday and especially stops buying something people do not like",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 89,
+      "title": "Starbuck gift card",
+      "text": "My friend like the gift card like the sweater for holiday card",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 90,
+      "title": "Good litte thank-you gifts",
+      "text": "I'm happy they did not cost me more than their face value to buy. I gave them out as a nice thank you to those who helped me with small things around my house. I sent them in the mail as a surprise, knowing money or gifts was not necessary. I recommend them.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY",
+        "TRUST"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 1,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 4
+      },
+      "nrc_matched_token_count": 6,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 91,
+      "title": "Okay as a gift",
+      "text": "After I bought several I realized I could have sent \"gift\" money via text without the fees or wait.",
+      "llm_primary_emotion": "DISGUST",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 92,
+      "title": "Good gift",
+      "text": "Those who already have everything, they can buy an audible book, an old rerun of a favorite movie, some little thing they may want, or whatever as a gift for any occasion. I recommend.",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 3,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 0,
+        "SURPRISE": 3,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 93,
+      "title": "So convenient.",
+      "text": "Arrived on time, in perfect shape, and best of all the person receiving the gift can buy whatever they want. One size fits all!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 1,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 3,
+        "SADNESS": 0,
+        "SURPRISE": 2,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 5,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 94,
+      "title": "Just what was ordered.",
+      "text": "Made holiday shopping easy!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 2,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 1,
+        "TRUST": 1
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 95,
+      "title": "Can Do It From Home",
+      "text": "Usually I either receive an Amazon gift card as a birthday and/or Christmas gift or I purchase them at a store. Then it's very easy to add the amount to my gift card balance using my cell phone. Well I was stuck inside for several days due to a blizzard and I bought quite a few books then due to a travel ban I could not go to the store to purchase a gift card.<br />So after checking my Gift Card Balance I saw that I had overindulged and it needed to be topped up. One of the options under Manage Your Balance was to Reload Your Balance. I had never used this option but decided to try it. It was so easy to do and I didn't have to leave the comfort of my home. I will be using it again in the future.",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 9,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 7,
+        "SADNESS": 1,
+        "SURPRISE": 7,
+        "TRUST": 2
+      },
+      "nrc_matched_token_count": 11,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": false
+    },
+    {
+      "row_index": 96,
+      "title": "Love it!",
+      "text": "Love my card!!",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "JOY",
+      "nrc_top_emotions": [
+        "JOY"
+      ],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 2,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 2,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": true,
+      "tie_aware_emotion_agreement": true
+    },
+    {
+      "row_index": 97,
+      "title": "Easy to use",
+      "text": "It\u2019s easy to use and very convenient. I would definitely consider refill more in the future",
+      "llm_primary_emotion": "TRUST",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 98,
+      "title": "Easy to use",
+      "text": "Very easy to use. I wish I knew about it earlier",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "NO_MATCH",
+      "nrc_top_emotions": [],
+      "nrc_tie": false,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 0,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 0,
+        "SADNESS": 0,
+        "SURPRISE": 0,
+        "TRUST": 0
+      },
+      "nrc_matched_token_count": 0,
+      "comparison_eligible": false,
+      "exact_emotion_agreement": null,
+      "tie_aware_emotion_agreement": null
+    },
+    {
+      "row_index": 99,
+      "title": "Perfect gift sent I a lovely container",
+      "text": "Sent in a lovely container",
+      "llm_primary_emotion": "JOY",
+      "nrc_primary_emotion": "ANTICIPATION",
+      "nrc_top_emotions": [
+        "ANTICIPATION",
+        "JOY"
+      ],
+      "nrc_tie": true,
+      "nrc_emotion_scores": {
+        "ANGER": 0,
+        "ANTICIPATION": 4,
+        "DISGUST": 0,
+        "FEAR": 0,
+        "JOY": 4,
+        "SADNESS": 2,
+        "SURPRISE": 3,
+        "TRUST": 3
+      },
+      "nrc_matched_token_count": 4,
+      "comparison_eligible": true,
+      "exact_emotion_agreement": false,
+      "tie_aware_emotion_agreement": true
+    }
+  ]
+}

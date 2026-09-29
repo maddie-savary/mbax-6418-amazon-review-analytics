@@ -1,0 +1,23 @@
+{
+  "official_resource_name": "NRC Word-Emotion Association Lexicon (aka NRC Emotion Lexicon, aka EmoLex)",
+  "official_webpage_url": "https://www.saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm",
+  "exact_download_url": "https://saifmohammad.com/WebDocs/Lexicons/NRC-Emotion-Lexicon.zip",
+  "version_reported_by_readme": "0.92 (Public Released: 10 July 2011; Readme Last Updated: August 2022)",
+  "authors_or_creators": "Dr. Saif M. Mohammad (Senior Research Scientist, National Research Council Canada); Dr. Peter Turney. Contact: saif.mohammad@nrc-cnrc.gc.ca, uvgotsaif@gmail.com.",
+  "copyright_or_attribution_statement": "Copyright (C) 2011 National Research Council Canada (NRC). See README.txt Terms of Use.",
+  "usage_restriction": "README terms of use: free for non-commercial research and educational purposes; no redistribution (direct interested parties to the lexicon home page); title remains with NRC; commercial use requires contacting the author.",
+  "source_file_name": "data/nrc/NRC-Emotion-Lexicon/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt (official English word-level association file)",
+  "archive_checksum_sha256": "4edcbd00b1d38ace19ecebca17a50ce08719785b9476cd12d31532eff0fc34e6",
+  "validation_counts": {
+    "parsed_lines": 141540,
+    "unique_terms": 14154,
+    "total_records": 141540,
+    "duplicate_term_category_records": 0,
+    "malformed_lines": 0,
+    "non_binary_values": 0,
+    "positive_emotion_associations": 8248,
+    "all_eight_emotions_present": true
+  },
+  "access_date": "2026-09-20",
+  "git_ignored_note": "The raw archive, extracted lexicon files, supplied README, and raw-data validation files (data/nrc/) remain under the Git-ignored data/ directory (.gitignore: 'data/'). This root manifest contains METADATA ONLY — no lexicon terms, association records, or raw lexicon content are embedded."
+}

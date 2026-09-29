@@ -16,9 +16,7 @@ Amazon.
 
 ## Final dashboard
 
-Open [dashboard.html](dashboard.html) in any browser. It is a single
-self-contained file (inline CSS and JavaScript, no external assets) and works
-fully offline.
+Open the [interactive dashboard](https://maddie-savary.github.io/mbax-6418-amazon-review-analytics/dashboard.html) — it is a single self-contained HTML file (inline CSS and JavaScript, no external assets) that also works offline from `dashboard.html` in the repository.
 
 The dashboard has four accessible tabs, with URL-hash navigation
 (`#overview`, `#binary`, `#emotions`, `#balanced`):
